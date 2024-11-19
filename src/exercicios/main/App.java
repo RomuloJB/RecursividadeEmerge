@@ -42,8 +42,6 @@ public class App {
         // ex 9
         System.out.println("\n-----------Exercicio 9-----------");
         InverteString.executarInverteString();
-        // ex10
-        System.out.println("\n-----------Exercicio 10-----------");
         
     }
 }
