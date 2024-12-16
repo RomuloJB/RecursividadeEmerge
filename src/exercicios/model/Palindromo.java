@@ -18,7 +18,6 @@ public class Palindromo {
         }
         return true;
     }
-   
 }
 
 

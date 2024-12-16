@@ -6,7 +6,7 @@ public class CompararSorts {
 
     public static void main(String[] args) {
         int[] sizes = {1000, 10000, 100000, 1000000};
-        int numExecutions = 10;
+        int numExecutions = 1;
 
         for (int size : sizes) {
             double mergeSortTime = 0;

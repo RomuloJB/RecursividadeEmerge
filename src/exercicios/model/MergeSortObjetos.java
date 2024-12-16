@@ -24,40 +24,27 @@ public class MergeSortObjetos {
             int meio = (inicio + fim) / 2;
             mergeSort(array, auxiliar, inicio, meio, atributo);
             mergeSort(array, auxiliar, meio + 1, fim, atributo);
-            merge(array, auxiliar, inicio, meio, fim, atributo);
+            intercalacao(array, auxiliar, inicio, meio, fim, atributo);
         }
     }
 
-    private static void merge(Pessoa[] array, Pessoa[] auxiliar, int inicio, int meio, int fim, String atributo) {
-        for (int i = inicio; i <= fim; i++) {
-            auxiliar[i] = array[i];
+    private static void intercalacao(Pessoa[] array, Pessoa[] auxiliar, int inicio, int meio, int fim, String atributo) {
+        for (int x = inicio; x <= fim; x++) {
+            auxiliar[x] = array[x];
         }
-
         int esquerda = inicio;
         int direita = meio + 1;
-        int k = inicio;
-
-        while (esquerda <= meio && direita <= fim) {
-            if (compare(auxiliar[esquerda], auxiliar[direita], atributo) <= 0) {
-                array[k] = auxiliar[esquerda];
-                esquerda++;
+    
+        for (int k = inicio; k <= fim; k++) {
+            if (esquerda > meio) {
+                array[k] = auxiliar[direita++];
+            } else if (direita > fim) {
+                array[k] = auxiliar[esquerda++];
+            } else if (compare(auxiliar[esquerda], auxiliar[direita], atributo) <= 0) {
+                array[k] = auxiliar[esquerda++];
             } else {
-                array[k] = auxiliar[direita];
-                direita++;
+                array[k] = auxiliar[direita++];
             }
-            k++;
-        }
-
-        while (esquerda <= meio) {
-            array[k] = auxiliar[esquerda];
-            esquerda++;
-            k++;
-        }
-
-        while (direita <= fim) {
-            array[k] = auxiliar[direita];
-            direita++;
-            k++;
         }
     }
 
@@ -66,7 +53,8 @@ public class MergeSortObjetos {
             case "idade":
                 return Integer.compare(p1.idade, p2.idade);
             default:
-                throw new IllegalArgumentException("Atributo não suportado: " + atributo);
+                System.out.println("O atributo "+ atributo +" não é válido");
+                return 0;
         }
     }
 }
@@ -85,4 +73,3 @@ class Pessoa {
         return nome +" "+ idade;
     }
 }
-

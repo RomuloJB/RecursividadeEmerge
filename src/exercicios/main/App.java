@@ -14,7 +14,6 @@ public class App {
 
         String[] vetorString = { "Romulo", "Messi", "Neymar", "Cristiano", "Ronaldo" };
 
-
         // ex 1
         System.out.println("-----------Exercicio 1-----------");
         MergeSortMatriz.executarMergeSortMatriz(matriz);
@@ -42,8 +41,6 @@ public class App {
         // ex 9
         System.out.println("\n-----------Exercicio 9-----------");
         InverteString.executarInverteString();
-        // ex10
-        System.out.println("\n-----------Exercicio 10-----------");
         
     }
 }

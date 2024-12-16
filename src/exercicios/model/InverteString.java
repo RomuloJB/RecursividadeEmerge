@@ -13,5 +13,6 @@ public class InverteString {
             return str;
         }
         return inverterString(str.substring(1)) + str.charAt(0);
+        //substring pega a string a partir do indice 1 enquanto o chatAt pega a o caractere da posição 0 e vai retornando ele até que a str fique vazia
     }
 }

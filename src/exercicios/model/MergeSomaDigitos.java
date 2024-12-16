@@ -11,6 +11,10 @@ public class MergeSomaDigitos {
         if (numero == 0) {
             return 0;
         }
+        
         return (numero % 10) + somaDigitos(numero / 10);
+        //o resto da divisao por 10 serve pra pegar o ultimo digito do numero
+        //aí divide por 10 para tirar o ultimo digito
+        //depois faço a soma do primeiro digito retirado com o segundo e assim vai
     }
 }
